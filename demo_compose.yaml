@@ -4,6 +4,9 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: 'postgres_password'
+    ports:
+      - "8080:80"
+
   warp-demo-wsgi:
     build: .
     depends_on:
