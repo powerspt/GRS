@@ -15,7 +15,7 @@ CREATE TABLE users (
     );
 
 -- create initial admin with password 'noneshallpass'
-INSERT INTO users VALUES ('admin','pbkdf2:sha256:260000$LdN4KNf6xzb0XlSu$810ca4acafd3b6955e6ebc39d2edafd582c8020ab87fd56e3cede1bfebb7df03','Admin',10);
+INSERT INTO users VALUES ('admin','pbkdf2:sha256:150000$Il9CB1Hb$f241aaa5d7e31baefba95d2112f2e1e46ad3b7c85f35d69b1cda8ecf401125e3','Admin',10);
 
 CREATE INDEX users_account_type_idx ON users(account_type);
 
