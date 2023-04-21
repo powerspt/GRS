@@ -74,7 +74,7 @@ def zone(zid):
     #nextWeek = utils.getNextWeek()
     nextWeek = utils.getNextDay()
     defaultSelectedDates = {
-        "slider": [9*3600, 17*3600]
+        "slider": [7*3600, 17*3600]
     }
 
     for d in nextWeek[1:]:
