@@ -29,7 +29,6 @@ def getTimeRange(extended = False):
         weeksInAdvance += 2
 
     t = gmtime(fromTS)
-    '''2023.04.21 fix 7 -> 2'''
     toTS = (7 - t.tm_wday) + weeksInAdvance*7
     toTS = 24*3600*toTS + fromTS
 
@@ -61,16 +60,17 @@ def getNextWeek():
             "timestamp": ts,
             "date": strftime("%Y-%m-%d",t),
             "weekdayN": strftime("%w",t),
-            "isWeekend": t.tm_wday>=5
+            "isWeekend": t.tm_wday>=4
         })
-
+        # "isWeekend": t.tm_wday>=5
+        
         ts = ts + 24*3600
-        # 2023.04.21 fix 6 -> 3
-        if t.tm_wday == 3:
+        # if t.tm_wday == 6:
+        if t.tm_wday == 5:
             noOfSundays = noOfSundays + 1
 
     return res
-    
+
 def formatTimestamp(ts):
 
     t = gmtime(ts)
