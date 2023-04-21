@@ -71,7 +71,8 @@ def zone(zid):
     if zoneRole is None:
         flask.abort(403)
 
-    nextWeek = utils.getNextWeek()
+    #nextWeek = utils.getNextWeek()
+    nextWeek = utils.getNextDay()
     defaultSelectedDates = {
         "slider": [9*3600, 17*3600]
     }

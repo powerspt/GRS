@@ -71,6 +71,32 @@ def getNextWeek():
 
     return res
 
+def getNextDay():
+    """ Returns a structure containing timestamp and date string for days """
+    """ from today until the end of next week"""
+
+    ts = today()
+
+    res = []
+    noOfSundays = 0
+
+    weeksInAdvance = flask.current_app.config['WEEKS_IN_ADVANCE']
+
+
+    ts = ts + 24*3600
+    t = gmtime(ts)
+    res.append( {
+        "timestamp": ts,
+        "date": strftime("%Y-%m-%d",t),
+        "weekdayN": strftime("%w",t),
+        "isWeekend": t.tm_wday>=2
+    })
+    # "isWeekend": t.tm_wday>=5
+        
+    ts = ts + 24*3600
+
+    return res
+
 def formatTimestamp(ts):
 
     t = gmtime(ts)
