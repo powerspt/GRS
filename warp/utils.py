@@ -83,18 +83,28 @@ def getNextDay():
     weeksInAdvance = flask.current_app.config['WEEKS_IN_ADVANCE']
 
 
+    
+    t = gmtime(ts)
+    res.append( {
+        "timestamp": ts,
+        "date": strftime("%Y-%m-%d",t),
+        "weekdayN": strftime("%w",t),
+        "isWeekend": t.tm_wday>=6
+    })
+    # "isWeekend": t.tm_wday>=5
+        
     ts = ts + 24*3600
     t = gmtime(ts)
     res.append( {
         "timestamp": ts,
         "date": strftime("%Y-%m-%d",t),
         "weekdayN": strftime("%w",t),
-        "isWeekend": t.tm_wday>=2
+        "isWeekend": t.tm_wday>=6
     })
     # "isWeekend": t.tm_wday>=5
         
     ts = ts + 24*3600
-
+    
     return res
 
 def formatTimestamp(ts):
