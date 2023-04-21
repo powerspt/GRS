@@ -72,6 +72,7 @@ def zone(zid):
         flask.abort(403)
 
     nextWeek = utils.getNextWeek()
+    #nextWeek = utils.
     defaultSelectedDates = {
         "slider": [9*3600, 17*3600]
     }
