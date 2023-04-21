@@ -53,7 +53,7 @@ $ docker-compose -v
 
 ### 3. 래포지토리 복사 & 설치
 ```
-$ git clone https://github.com/sebo-b/warp.git
+$ git clone https://github.com/powerspt/warp.git
 $ cd warp
 
 $ docker compose -f demo_compose.yaml up
