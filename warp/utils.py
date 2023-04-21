@@ -60,13 +60,13 @@ def getNextWeek():
             "timestamp": ts,
             "date": strftime("%Y-%m-%d",t),
             "weekdayN": strftime("%w",t),
-            "isWeekend": t.tm_wday>=4
+            "isWeekend": t.tm_wday>=2
         })
         # "isWeekend": t.tm_wday>=5
         
         ts = ts + 24*3600
         # if t.tm_wday == 6:
-        if t.tm_wday == 5:
+        if t.tm_wday == 3:
             noOfSundays = noOfSundays + 1
 
     return res
