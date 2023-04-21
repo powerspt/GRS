@@ -29,7 +29,8 @@ def getTimeRange(extended = False):
         weeksInAdvance += 2
 
     t = gmtime(fromTS)
-    toTS = (7 - t.tm_wday) + weeksInAdvance*7
+    '''2023.04.21 fix 7 -> 2'''
+    toTS = (2 - t.tm_wday) + weeksInAdvance*2
     toTS = 24*3600*toTS + fromTS
 
     return { "fromTS": fromTS, "toTS": toTS}
